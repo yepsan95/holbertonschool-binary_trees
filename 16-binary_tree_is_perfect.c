@@ -6,7 +6,7 @@
  *
  * Return: 1 if the binary tree is perfect, 0 otherwise
  */
-binary_tree_is_perfect(const binary_tree_t *tree)
+int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int is_perfect;
 
