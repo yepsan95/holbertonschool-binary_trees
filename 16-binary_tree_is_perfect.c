@@ -8,7 +8,7 @@
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int is_perfect;
+	int is_perfect_l, is_perfect_r;
 
 	if (tree == NULL)
 		return (0);
@@ -17,9 +17,10 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (1);
 	if (tree->left != NULL && tree->right != NULL)
 	{
-		is_perfect = binary_tree_is_perfect(tree->left);
-		is_perfect = binary_tree_is_perfect(tree->right);
+		is_perfect_l = binary_tree_is_perfect(tree->left);
+		is_perfect_r = binary_tree_is_perfect(tree->right);
 	}
 
-	return (is_perfect);
+	if (is_perfect_l == 1 && is_perfect_r == 1)
+		return (1);
 }
